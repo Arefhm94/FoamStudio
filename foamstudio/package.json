@@ -12,10 +12,19 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
+    "languages": [
       {
-        "command": "foamstudio.helloWorld",
-        "title": "Hello World"
+        "id": "openfoam",
+        "aliases": ["OpenFOAM", "openfoam", "foam"],
+        "extensions": [".foam", ".dict", "blockMeshDict", "controlDict"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "openfoam",
+        "scopeName": "source.openfoam",
+        "path": "./syntaxes/openfoam.tmLanguage.json"
       }
     ]
   },
